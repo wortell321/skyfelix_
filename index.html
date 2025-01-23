@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> SMA NEGERI 7 KONSEL </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        header {
+            background-image: url('https://lh3.googleusercontent.com/p/AF1QipMmqLrsg9dLL1t6DBftfZAxLwgTcdcIb47ZLMbI=s1134-k-no');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 160px 90px;
+            font-family: 'Supermercado one', cursive;
+            text-shadow: 2px 4px 2px black, 6px 6px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-animasi{
+        overflow: hidden;
+        white-space: nowrap;
+        width: 0;
+        animation: typing 1.9s steps(30, end) forwards, blinking 3s infinite;
+        display: grid;
+        place-items: center;
+        width: 380px;
+        position: sticky;
+        display: inline-block;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-family: 'Supermercado One', cursive;
+        text-shadow: 4px 4px 0px #D7DACC, 8px 8px 0px rgba(0, 0, 0, 0.1);
+    }
+
+        @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+        }
+
+        @keyframes blinking {
+          0% {border-color: transparent}
+          50% {border-color: white}
+          100% {border-color: red;}
+        }
+
+    #wrapper {
+        width: 900px;
+        margin: auto;
+        padding: 10px;
+    }  
+
+    .warr {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: Light Steel Blue;
+        padding: 15px 15px;    
+    }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: purple;
+            padding: 15px 15px;
+            position: fixed;
+            width: 98%;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: right;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .logo img {
+            width: 50px;
+            margin-right: 18px;
+        }
+
+        .logo p {
+        font-size: 26px;
+        margin: 10px;
+        }
+
+        .run {
+            list-style-type: none;
+            display: flex;
+            gap: 28px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 20px 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: plum;
+            transform: scale(1.05);
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;    
+        }
+
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: purple;
+            color: plum;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 60%;
+            padding: 16px;
+            transition: transform 0.9s;
+        }
+
+        .card img {
+            width: 80%;
+            border-radius: 4px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 250px;
+            height: 150px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Formulir Kontak */
+        .contact-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin: 20px auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .contact-form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            color: #fff;  
+            font-family: Arial, sans-serif;
+            align-content: center;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            height: 300px;
+        }
+
+        .footer-about, .footer-contact, .footer-links {
+            flex: 1;
+            margin: 30px;
+            min-width: 300px;
+        }
+
+        .footer-about h3, .footer-contact h3, .footer-links h3 {
+            color: #f4f4f4;
+            margin-bottom: 30px;
+        }
+
+        .footer-about p, .footer-contact ul, .footer-links ul {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .footer-about img {
+            width: 160px;
+            height: 70px;
+            border-radius: 2px;
+        }
+
+        .footer-contact ul, .footer-links ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-contact li, .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: goldenrod;
+            text-decoration: revert-layer;
+        }
+
+        .footer-links a:hover {
+            text-decoration: line-through;
+            background-color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 18px;
+            color: #f4f4f4;
+            background-size: 10;
+        }
+
+        .open-chat-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 80px;
+            height: 80px;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNK-Dh6E9iIW8ZOTYo782nV--t9nBUh2jaHw&s);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: none;
+            border-radius: 50%;
+            font-size: 40px;
+            cursor: pointer;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .open-chat-btn:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+
+        .chatbox-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            height: 420px;
+            background-color:;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chatbox-header {
+            background-color: #228B22;
+            color: white;
+            padding: 15px;
+            font-size: 16px;
+            text-align: center;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            font-size: 25px;
+        }
+
+        .chatbox-content {
+            flex-grow: 1;
+            padding: 10px;
+            overflow-y: auto;
+            background-image: url(https://img.freepik.com/premium-photo/blue-abstract-background_1256222-8390.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .chat-message {
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 8px;
+            background-color: #ecf0f1;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .chat-message.user {
+            background-color: #32CD32;
+            color: white;
+            align-self: flex-end;
+        }
+
+        .chat-message.bot {
+            background-color: #95a5a6;
+            color: white;
+            align-self: flex-start;
+        }
+
+        .chatbox-footer {
+            padding: 12px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .chatbox-footer input {
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-right: 10px;
+        }
+
+        .chatbox-footer button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .chatbox-footer button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Logo_of_Ministry_of_Education_and_Culture_of_Republic_of_Indonesia.svg/800px-Logo_of_Ministry_of_Education_and_Culture_of_Republic_of_Indonesia.svg.png" alt="Logo Sekolah">
+                <p> <b>SMA NEGERI 7 KONAWE SELATAN</b> </p>    
+        </div>
+        <ul class="run">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="profil.html">Profil</a></li>
+            <li><a href="berita.html">Berita</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <P style= "font-size: 24px" "font-weight: bold;"> Selamat Datang di : </P>
+        <h1 style= "font-size: 50px" "font-weight: bold"> SMA NEGERI 7 KONAWE SELATAN </h1>
+        <a style= "font-size: 20px" "font-weight: bold"> Mewujudkan individu berkelas yang bebas narkoba, berorientasi dan cerdas.</a>
+    </header>
+    <br>
+    <br>
+    <br>
+    <div>
+        <h1 class="text-animasi" id="wrapper" style="color: navy; background-color: plum;" align="center">Selamat Datang</h1>
+    </div>
+    <br>
+    <br>
+    <br>   
+    <div class="container">
+        <section class="main-content">
+            <div class="card">
+                <h2>Fasilitas Kami</h2>
+                <img src="https://faktual.net/wp-content/uploads/2023/07/IMG_20230717_073105-1.jpg" alt="Fasilitas Sekolah">
+                <p>Fasilitas yang kami miliki mendukung proses belajar mengajar yang maksimal, dengan ruang kelas yang nyaman, perpustakaan yang lengkap, dan lapangan olahraga yang luas.</p>
+            </div>
+
+            <div class="card">
+                <h2>Tentang Sekolah</h2>
+                <img src="https://penasultra.id/wp-content/uploads/2022/04/IMG_20220402_083926.jpg" alt="Tentang Sekolah">
+                <p>Ini adalah tempat di mana kita mengembangkan potensi anak-anak bangsa, menanamkan nilai-nilai luhur, dan mempersiapkan mereka untuk masa depan yang lebih baik.</p>
+            </div>
+
+            <div class="card">
+                <h2>Kegiatan Sekolah</h2>
+                <img src="https://smadatanatidung.sch.id/storage/01-cms-website/smadatanatidung.sch.id/editor/672f033c6d1a4Gambar_WhatsApp_2024-11-09_pukul_14.02.01_cc32ec2e.jpg" alt="Tentang Sekolah">
+                <p>Kami selalu mengadakan Pekan Olahraga Sekolah dan Kesenian (Porseni) setiap tahunnya guna menciptakan kreatifitas dan ketangkasan pada siswa SMA Negeri 7 Konawe Selatan</p>
+            </div>
+
+            <div class="card">
+                <h2>EKSTRAKURIKULER</h2>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDySbGH1c5BTFarrwBtnaQzqj8SbkjRQ1Xcw&s" alt="Tentang Sekolah">
+                <p> Kegiatan PRAMUKA adala salah satu Ekstrakurikuler terpopuler di sekolah kami. dan selalu membawa penghargaan di setiap perlombaan antar sekolah</p>
+            </div>
+        </section>
+        <br>
+        <br>
+        <section>
+            <h2 align="center"><a href="galeri.html">Galeri Foto</a></h2>
+            <div class="gallery">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo90-OdoPzbrIZ5cZepLaQblVyhiQZFIB8TVwHDq9XPRqOID-zU45YEs2BK6PjmkDlVrA&usqp=CAU" alt="Kegiatan Sekolah">
+                <img src="https://elindonews.id/wp-content/uploads/2023/07/fe7c58cc-eeaa-4753-9832-9b996dba39e9.jpeg" alt="Kegiatan Sekolah">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu7-bDI-hYFJBbyzeykxydrXxSYl8nMya3cJliB_6YRlP8vv48lVaoiEFLIUGBgo8Aet4&usqp=CAU" alt="Kegiatan Sekolah">
+                <img src="https://penasultra.id/wp-content/uploads/2022/04/IMG_20220402_083926.jpg" alt="Kegiatan Sekolah">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD_ZiNYDoXVYbNsfacgtqKBQ_IPiLaAP3BvuwL8uAQqsy91_Dp3bK3_lgIGX9ym7cp55w&usqp=CAU" alt="Kegiatan Sekolah">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo9svk2i_e98ipruEHyjLsqbIfIBOCIqh6i5WEdrhitSJ45KfMaCyW4VF6uiqrRV99vQk&usqp=CAU" alt="Kegiatan Sekolah">
+            </div>
+        </section>       
+    </div>
+
+    <br>
+    <footer style="background-color: #808000">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <img src="https://lh3.googleusercontent.com/p/AF1QipMmqLrsg9dLL1t6DBftfZAxLwgTcdcIb47ZLMbI=s1134-k-no" alt="About Us">
+                <p>SMA Negeri 7 Konawe Selatan mengimplementasikan pendidikan
+                karakter dengan melalui pembiasaan kultur sekolah dengan beberapa
+                program kegiatan yang beragam.</p>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <ul>
+                    <li>✉️   Email : sman7konsel@gmail.com </li>
+                    <li>📞   Telpon: 085824235210</li>
+                    <li>📌   JL. POROS KOLONO KENDARI, Kabupaten Konawe Selatan, Sulawesi Tenggara</li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="berita.html">Berita</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="contact.html">Contact</a></li> 
+                </ul>
+            </div>
+        </div>    
+    </footer>
+    <br>
+    <br>
+    <footer style="background-color: #696969">
+        <div class="footer-bottom">
+            <p>&copy; 2025 SMA NEGERI 7 KONAWE SELATAN | Semua Hak Cipta Dilindungi</p>
+        </div>
+    </footer>
+
+    <div>
+        <button class="open-chat-btn" onclick="openChat()"></button>
+
+        <div class="chatbox-container">
+            <div class="chatbox-header">
+                <span>Chat dengan Kami</span>
+                <span class="close-btn" onclick="closeChat()">×</span>
+            </div>
+            <div class="chatbox-content" id="chat-content">
+                <div class="chat-message bot">Halo! Ada yang bisa kami bantu?</div>
+            </div>
+            <div class="chatbox-footer">
+                <input type="text" id="user-message" placeholder="Tulis pesan..." />
+                <button onclick="sendMessage()">Kirim</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openChat() {
+            document.querySelector('.chatbox-container').style.display = 'flex';
+        }
+
+        function closeChat() {
+            document.querySelector('.chatbox-container').style.display = 'none';
+        }
+
+        function sendMessage() {
+            const userMessage = document.getElementById('user-message').value.trim();
+            if (userMessage === "") return;
+            const chatContent = document.getElementById('chat-content');
+            const userMessageElement = document.createElement('div');
+            userMessageElement.classList.add('chat-message', 'user');
+            userMessageElement.textContent = userMessage;
+            chatContent.appendChild(userMessageElement);
+            chatContent.scrollTop = chatContent.scrollHeight;
+
+            document.getElementById('user-message').value = "";
+            setTimeout(() => {
+                const botMessage = document.createElement('div');
+                botMessage.classList.add('chat-message', 'bot');
+                botMessage.textContent = "Terima kasih atas pesan Anda! Kami akan segera merespon.";
+                chatContent.appendChild(botMessage);
+
+                chatContent.scrollTop = chatContent.scrollHeight;
+            }, 1500);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(https://img.lovepik.com/photo/48027/7549.jpg_wh300.jpg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .modal-content h2 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 350px;
+            height: 100%;
+            max-height: 450px;
+            padding: 20px;
+            background-image: url(https://images.pexels.com/photos/1624438/pexels-photo-1624438.jpeg?cs=srgb&dl=pexels-eberhardgross-1624438.jpg&fm=jpg);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 80px;
+            height: auto;
+        }
+
+        .login-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .textbox {
+            margin-bottom: 20px;
+        }
+
+        .textbox input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        .textbox input:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .login-btn button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .login-btn button:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            display: none;
+            color: red;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .links a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .login-container {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .logo img {
+                width: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Logo_of_Ministry_of_Education_and_Culture_of_Republic_of_Indonesia.svg/800px-Logo_of_Ministry_of_Education_and_Culture_of_Republic_of_Indonesia.svg.png" alt="Logo SMAN 2 Kendari"> 
+            </div>
+            <h2><a href="login.html">Login </a></h2>
+            <form action="#" method="post">
+                <div class="textbox">
+                    <input type="text" name="username" placeholder="Username" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="login-btn">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+            
+            <div class="error-message" id="error-message">
+                <p>Username atau Password salah!</p>
+            </div>
+          
+            <div class="links">
+                <a href="lupa_pasword.html">Lupa Password?</a> | <a href="daftar.html">Daftar</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const modal = document.getElementById("loginModal");
+        const loginBtn = document.getElementById("loginBtn");
+        const closeModal = document.getElementById("closeModal");
+
+        loginBtn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        closeModal.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const username = document.querySelector("[name='username']").value;
+            const password = document.querySelector("[name='password']").value;
+            if (username !== "admin" || password !== "admin123") {  // Contoh validasi
+                document.getElementById("error-message").style.display = "block";
+            } else {
+                window.location.href = "dashboard.html";
+            }
+        });
+    </script>
+</body>
+</html>
+

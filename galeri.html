@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+
+	body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: plum;
+    }
+
+    header {
+        background-image: url('https://lh3.googleusercontent.com/p/AF1QipMmqLrsg9dLL1t6DBftfZAxLwgTcdcIb47ZLMbI=s1134-k-no');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 160px 90px;
+    }
+
+    .text-animasi{
+        overflow: hidden;
+        white-space: nowrap;
+        width: 0;
+        animation: typing 1.9s steps(30, end) forwards, blinking 3s infinite;
+        display: grid;
+        place-items: center;
+        width: 380px;
+        position: sticky;
+        display: inline-block;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-family: 'Supermercado One', cursive;
+        text-shadow: 4px 4px 0px black, 8px 8px 0px rgba(0, 0, 0, 0.1);
+    }
+
+        @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+        }
+
+        @keyframes blinking {
+          0% {border-color: transparent}
+          50% {border-color: black;}
+          100% {border-color: red;}
+        }
+
+    #wrapper {
+        width: 900px;
+        margin: auto;
+        padding: 10px;
+    }  
+
+    .warr {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: purple;
+        padding: 15px 15px;    
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        color: white;
+    }
+
+    .logo img {
+        width: 50px;
+        margin-right: 18px;
+    }
+
+    .logo p {
+    font-size: 26px;
+    margin: 10px;
+    }
+
+    .run {
+        list-style-type: none;
+        display: flex;
+        gap: 28px;
+        justify-content: right;
+    }
+
+    nav ul li {
+    	margin: 0;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        padding: 20px 20px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        background-color: #DAA520;
+        transform: scale(1.05);
+    }
+
+    
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+    }
+
+    .photo {
+        width: 300px;
+        margin: 15px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .photo img {
+        width: 100%;
+        height: 150px;
+        display: block;
+    }
+
+    .photo:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+	footer {
+        color: #fff;
+        font-family: Arial, sans-serif;
+        align-content: center;
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .footer-about, .footer-contact, .footer-links {
+        flex: 1;
+        margin: 40px;
+        min-width: 300px;
+    }
+
+    .footer-about h3, .footer-contact h3, .footer-links h3 {
+        color: #f4f4f4;
+        margin-bottom: 15px;
+    }
+
+    .footer-about p, .footer-contact ul, .footer-links ul {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    .footer-about img {
+        width: 160px;
+        height: 70px;
+        border-radius: 2px;
+    }
+
+    .footer-contact ul, .footer-links ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .footer-contact li, .footer-links li {
+        margin-bottom: 10px;
+    }
+
+    .footer-links a {
+        color: goldenrod;
+        text-decoration: revert-layer;
+    }
+
+    .footer-links a:hover {
+        text-decoration: line-through;
+        background-color: white;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        font-size: 18px;
+        color: #f4f4f4;
+        background-size: 10;
+    }
+
+    .open-chat-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 80px;
+            height: 80px;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNK-Dh6E9iIW8ZOTYo782nV--t9nBUh2jaHw&s);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: none;
+            border-radius: 50%;
+            font-size: 40px;
+            cursor: pointer;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .open-chat-btn:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+
+        .chatbox-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            height: 420px;
+            background-color:;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chatbox-header {
+            background-color: #228B22;
+            color: white;
+            padding: 15px;
+            font-size: 16px;
+            text-align: center;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            font-size: 25px;
+        }
+
+        .chatbox-content {
+            flex-grow: 1;
+            padding: 10px;
+            overflow-y: auto;
+            background-image: url(https://img.freepik.com/premium-photo/blue-abstract-background_1256222-8390.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .chat-message {
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 8px;
+            background-color: #ecf0f1;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .chat-message.user {
+            background-color: #32CD32;
+            color: white;
+            align-self: flex-end;
+        }
+
+        .chat-message.bot {
+            background-color: #95a5a6;
+            color: white;
+            align-self: flex-start;
+        }
+
+        .chatbox-footer {
+            padding: 12px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .chatbox-footer input {
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-right: 10px;
+        }
+
+        .chatbox-footer button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .chatbox-footer button:hover {
+            background-color: #2980b9;
+        }
+
+	</style>
+</head>
+<body>
+	<nav class="warr">
+        <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Logo_of_Ministry_of_Education_and_Culture_of_Republic_of_Indonesia.svg/800px-Logo_of_Ministry_of_Education_and_Culture_of_Republic_of_Indonesia.svg.png" alt="Logo Sekolah">
+                <p> <b>SMA NEGERI 7 KONAWE SELATAN</b> </p>    
+        </div>
+        <ul class="run">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="profil.html"> Profil </a></li>
+            <li><a href="berita.html">Berita</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <header>      
+        <h1  class="text-animasi" id="wrapper" style= "font-size: 50px" "font-weight: bold" align="center"> BERITA SMA NEGERI 7 KONAWE SELATAN </h1>       
+    </header>
+    <div>
+        <h1 class="text-animasi" id="wrapper" style="color: white; background-color: purple;" align="center">Galeri</h1>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        
+        <div class="photo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu7-bDI-hYFJBbyzeykxydrXxSYl8nMya3cJliB_6YRlP8vv48lVaoiEFLIUGBgo8Aet4&usqp=CAU" alt="Foto 1">
+        </div>
+        
+        <div class="photo">
+            <img src="https://sman2kdi.sch.id/wp-content/uploads/2024/03/sman-2-kdi-merdeka.png" alt="Foto 2">
+        </div>
+        
+        <div class="photo">
+            <img src="https://cdn.rri.co.id/berita/Kendari/o/1719476945014-Pendaftaran_PPDB_2024_di_SMAN_2_Kendari/85g8ekj7bnngom2.jpeg" alt="Foto 3">
+        </div>
+        
+        <div class="photo">
+            <img src="https://i.ytimg.com/vi/oRMO37dYw28/maxresdefault.jpg" alt="Foto 4">
+        </div>
+        
+        <div class="photo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA91Cj9hwZDs3o-mq3Lu-OJUJt3tykhlsEHw&s" alt="Foto 5">
+        </div>
+        
+        <div class="photo">
+            <img src="https://kendaripos.fajar.co.id/wp-content/uploads/2022/07/SMA.jpg" alt="Foto 7">
+        </div>
+
+        <div class="photo">
+            <img src="https://faktual.net/wp-content/uploads/2023/02/0acf7395-5904-4f4e-8cab-e7184c8fbb91.jpeg" alt="Foto 8">
+        </div>
+
+        <div class="photo">
+            <img src="https://sman2kdi.sch.id/wp-content/uploads/2024/05/UTBK-SMAN-2-Kendari-Provinsi-Sulawesi-Tenggara.jpg" alt="Foto 9">
+        </div>
+
+        <div class="photo">
+            <img src="https://sman1konaweselatan.sch.id/media_library/posts/mceclip533.jpg" alt="Foto 10">
+        </div>
+
+        <div class="photo">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipMmqLrsg9dLL1t6DBftfZAxLwgTcdcIb47ZLMbI=s1134-k-no" alt="Foto 11">
+        </div>
+
+        <div class="photo">
+            <img src="https://kendaripos.fajar.co.id/wp-content/uploads/2023/07/image-153.png" alt="Foto 12">
+        </div>
+
+        <div class="photo">
+            <img src="https://zonasultra.id/wp-content/uploads/2019/06/arif_paskibra2.jpg" alt="Foto 13">
+        </div>
+
+        <div class="photo">
+            <img src="https://i.ytimg.com/vi/eTcBQj1jZC8/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGHIgYyg9MA8=&rs=AOn4CLD8PPshTUh1SLjJQ7TqJF4c5uNqCQ" alt="Foto 14">
+        </div>
+
+        <div class="photo">
+            <img src="https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/105/2023/07/25/WhatsApp-Image-2023-07-25-at-145756-2449075748.jpeg" alt="Foto 13">
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <footer style="background-color: #808000">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <img src="https://lh3.googleusercontent.com/p/AF1QipMmqLrsg9dLL1t6DBftfZAxLwgTcdcIb47ZLMbI=s1134-k-no" alt="About Us">
+                <p>SMA Negeri 7 Konawe Selatan mengimplementasikan pendidikan
+                karakter dengan melalui pembiasaan kultur sekolah dengan beberapa
+                program kegiatan yang beragam.</p>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <ul>
+                    <li>✉️   Email : sman7konsel@gmail.com </li>
+                    <li>📞   Telpon: 085824235210</li>
+                    <li>📌   JL. POROS KOLONO KENDARI, Kabupaten Konawe Selatan, Sulawesi Tenggara</li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="berita.html">Berita</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="contact.html">Contact</a></li> 
+                </ul>
+            </div>
+        </div>    
+    </footer>
+    <br>
+    <br>
+    <footer style="background-color: #696969">
+        <div class="footer-bottom">
+            <p>&copy; 2025 SMA NEGERI 7 KONAWE SELATAN | Semua Hak Cipta Dilindungi</p>
+        </div>
+    </footer>
+
+    <nav>
+        <button class="open-chat-btn" onclick="openChat()"></button>
+
+        <div class="chatbox-container">
+            <div class="chatbox-header">
+                <span>Chat dengan Kami</span>
+                <span class="close-btn" onclick="closeChat()">×</span>
+            </div>
+            <div class="chatbox-content" id="chat-content">
+                <div class="chat-message bot">Halo! Ada yang bisa kami bantu?</div>
+            </div>
+            <div class="chatbox-footer">
+                <input type="text" id="user-message" placeholder="Tulis pesan..." />
+                <button onclick="sendMessage()">Kirim</button>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.querySelector('.next').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        });
+
+        document.querySelector('.prev').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        });
+
+        function updateSlider() {
+            const offset = -currentSlide * 100;
+            document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+
+    <script>
+        function openChat() {
+            document.querySelector('.chatbox-container').style.display = 'flex';
+        }
+
+        function closeChat() {
+            document.querySelector('.chatbox-container').style.display = 'none';
+        }
+
+        function sendMessage() {
+            const userMessage = document.getElementById('user-message').value.trim();
+            if (userMessage === "") return;
+            const chatContent = document.getElementById('chat-content');
+            const userMessageElement = document.createElement('div');
+            userMessageElement.classList.add('chat-message', 'user');
+            userMessageElement.textContent = userMessage;
+            chatContent.appendChild(userMessageElement);
+            chatContent.scrollTop = chatContent.scrollHeight;
+
+            document.getElementById('user-message').value = "";
+            setTimeout(() => {
+                const botMessage = document.createElement('div');
+                botMessage.classList.add('chat-message', 'bot');
+                botMessage.textContent = "Terima kasih atas pesan Anda! Kami akan segera merespon.";
+                chatContent.appendChild(botMessage);
+
+                chatContent.scrollTop = chatContent.scrollHeight;
+            }, 1500);
+        }
+    </script>
+
+</body>
+</html>
